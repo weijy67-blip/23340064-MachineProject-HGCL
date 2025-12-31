@@ -1,0 +1,65 @@
+INFO:root:Namespace(model_name='HGCL', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-12-31 20:53:17 ---------------------------------------------
+INFO:root:
+===================================
+ Arguments          | Values       
+===================================
+ batch_size         | 256         
+ data_appendix      |             
+ dataset            | MovieLens_1M
+ dropout            | 0           
+ early_stop         | 10          
+ emb_size           | 64          
+ epoch              | 5           
+ eval_batch_size    | 256         
+ gpu                | 0           
+ hyper_k            | 3           
+ l2                 | 1e-06       
+ lam                | 0.1         
+ lr                 | 0.001       
+ main_metric        |             
+ n_layers           | 2           
+ num_neg            | 1           
+ num_workers        | 5           
+ optimizer          | Adam        
+ random_seed        | 0           
+ save_final_results | 1           
+ tau                | 0.2         
+ test_all           | 0           
+ topk               | 5,10,20,50  
+===================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from data/MovieLens_1M\BaseReader.pkl
+INFO:root:#params: 602816
+INFO:root:HGCL(
+  (u_embeddings): Embedding(6033, 64)
+  (i_embeddings): Embedding(3126, 64)
+  (hgnn_layers): ModuleList(
+    (0-1): 2 x Linear(in_features=64, out_features=64, bias=True)
+  )
+  (projection): Sequential(
+    (0): Linear(in_features=64, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=64, out_features=64, bias=True)
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0477,NDCG@5:0.0293,HR@10:0.0905,NDCG@10:0.0431,HR@20:0.1820,NDCG@20:0.0659,HR@50:0.4944,NDCG@50:0.1269)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.4312 [686.8 s]	dev=(HR@5:0.3380,NDCG@5:0.2280) [26.2 s] *
+INFO:root:Epoch 2     loss=0.3677 [626.2 s]	dev=(HR@5:0.3431,NDCG@5:0.2302) [20.8 s] *
+INFO:root:Epoch 3     loss=0.3406 [618.0 s]	dev=(HR@5:0.3470,NDCG@5:0.2310) [20.7 s] *
+INFO:root:Epoch 4     loss=0.3166 [627.5 s]	dev=(HR@5:0.3653,NDCG@5:0.2429) [20.4 s] *
+INFO:root:Epoch 5     loss=0.2852 [611.4 s]	dev=(HR@5:0.3763,NDCG@5:0.2507) [20.9 s] *
+INFO:root:
+Best Iter(dev)=    5	 dev=(HR@5:0.3763,NDCG@5:0.2507) [3278.8 s] 
+INFO:root:Load model from ../model/HGCL/HGCL__MovieLens_1M__0__lr=0.001__l2=1e-06__emb_size=64__tau=0.2__lam=0.1__batch_size=256.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3763,NDCG@5:0.2507,HR@10:0.5359,NDCG@10:0.3020,HR@20:0.7319,NDCG@20:0.3517,HR@50:0.9325,NDCG@50:0.3921)
+INFO:root:
+Test After Training: (HR@5:0.3685,NDCG@5:0.2494,HR@10:0.5271,NDCG@10:0.3005,HR@20:0.7168,NDCG@20:0.3483,HR@50:0.9332,NDCG@50:0.3917)
+INFO:root:Saving top-100 recommendation results to: ../log/HGCL\HGCL__MovieLens_1M__0__lr=0\rec-HGCL-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HGCL\HGCL__MovieLens_1M__0__lr=0\rec-HGCL-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2025-12-31 21:49:39 ---------------------------------------------
