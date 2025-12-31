@@ -1,3 +1,4 @@
+=====================本项目为中山大学人工智能学院23340064韦江洋机器学习大作业源代码项目======================
 HGCL: Heterogeneous Graph Contrastive Learning for Recommendation
 基于超图对比学习的推荐系统框架
 
@@ -23,28 +24,7 @@ yaml
 安装依赖
 pip install -r requirements.txt
 
-项目结构
-MachinProject
-----ReChorus/
-    ├── src/                    # 源代码目录
-    │   ├── models/            # 模型实现
-    │   │   ├── HGCL.py        # HGCL主模型
-    │   │   ├── BaseModel.py   # 基础模型类
-    │   │   └── ...
-    │   ├── helpers/           # 数据加载和处理
-    │   ├── runners/           # 训练和评估流程
-    │   └── main.py           # 主入口文件
-    ├── data/                  # 数据集目录
-    │   ├── MovieLens_1M/     # MovieLens-1M数据集
-    │   └── Grocery/          # Grocery数据集
-    ├── scripts/              # 实用脚本
-    │   ├── download_data.py  # 数据下载脚本
-    │   ├── analysis.py       # 结果分析脚本
-    │   └── visualization.py  # 可视化脚本
-    ├── logs/                 # 训练日志
-    ├── results/             # 实验结果
-    ├── requirements.txt     # 依赖列表
-    └── README.md           # 项目说明
+
 
 使用方法
 使用自定义数据集
